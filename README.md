@@ -148,3 +148,4 @@ f1segura(valor) // Just(valor) o Nothing.
 
 # Referencias
 [Functional Programming in JavaScript - Chapter 5](https://www.manning.com/books/functional-programming-in-javascript)
+[Funtional JavaScript - What is a functor?](https://templecoding.com/blog/2016/06/16/functional-javascript-what-is-a-functor/)
