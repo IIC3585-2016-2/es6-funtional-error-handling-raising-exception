@@ -16,8 +16,17 @@ class Wrapper {
   }
 }
 
-const times = (value => value * 2);
-const wrap = value => new Wrapper(value)
-var dos = wrap(2);
-console.log(dos.map(times))
-console.log(dos)
+const wrap = value => new Wrapper(value);
+const sumar = x1 => x2 => x1 + x2;
+const cuadrado = x1 => x1*x1
+const dividir = x1 => x2 => x2/x1;
+
+/* */
+var dos = wrap(2)
+var cinco = dos.map(sumar(3))
+console.log(cinco.toString())
+
+/*Como ahora estamos trabajando con functors podemos concatenar las operaciones
+de forma continua,para trabajar con el valor envuelto de forma funcional */
+var valorFinal = cinco.map(cuadrado).map(sumar(10)).map(dividir(4));
+console.log(valorFinal.toString())
