@@ -147,5 +147,5 @@ f1segura(valor) // Just(valor) o Nothing.
 * Ya existen implementaciones de monads con el fin de evitar manejo de nulos (`Maybe`) y el manejo de excepciones (`Either`).
 
 # Referencias
-[Functional Programming in JavaScript - Chapter 5](https://www.manning.com/books/functional-programming-in-javascript)
-[Funtional JavaScript - What is a functor?](https://templecoding.com/blog/2016/06/16/functional-javascript-what-is-a-functor/)
+* [Functional Programming in JavaScript - Chapter 5](https://www.manning.com/books/functional-programming-in-javascript)
+* [Funtional JavaScript - What is a functor?](https://templecoding.com/blog/2016/06/16/functional-javascript-what-is-a-functor/)
