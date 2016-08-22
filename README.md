@@ -104,7 +104,7 @@ Al ser tipos de datos libres de implementación, existen infinitos. Existen algu
 
 ### Tipo of Monads
 
-* ### Maybe - Manejo de Nulos
+### Maybe - Manejo de Nulos
 
 `Maybe` es una clase padre de 2 subtipos, `Just` y `Nothing` que son implementaciones de Monads. En `monads.js` hay una implementación de ellos. Estos se comportan como los contenedores que hemos hablado, para un valor que puede o no estar. Cuando el valor está es `Just(valor)` pero cuando no, `Nothing`. Ambas tienen sus impementaciones de `map`, `join` que permiten trabajar con los valores sin que se levanten excepciones por trabajar con nulos que pueden aparecer. Puede utilizarse al trabajar con servicios remotos, como consultar una base de datos que puede o no retornar un valor. Permite también evitarse el chequeo de nulos constantes en código.
 
@@ -118,7 +118,7 @@ findPokemonDB('Pikachu').map(evolve).getOrElse(pokemon('Pikachu'));
 ```
 `Maybe` aparece en otros lenguajes, como `Option` y `Optional` en Java 8, con `Some` y `None` en vez de `Just` y `Nothing`.
 
-* ### Either - Manejo de Excepciones
+### Either - Manejo de Excepciones
 
 Es un poco distinto a `Maybe`, pero permite recuperar información de un posible error que ocurra en el transcurso de las operaciones. Define 2 posibles estados de un valor: `Left` que puede contener un objeto de error o mensaje de error y `Right` que contiene un valor exitoso. `Right` efectivamente aplica las funciones que se le entregan al objeto, en caso de un error, se crea un objeto `Left` con el error que ignora las funciones que se le entregan.
 
