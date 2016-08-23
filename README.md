@@ -74,7 +74,7 @@ var functor = [pokemon('Charmander')];
 functor.map(evolvex2); //[pokemon('Charizard')]
 functor.map(evolve).map(evolve); //[pokemon('Charizard')]
 ```
-La estructura general de un functor se encuentra en `functor.js`. Y se utiliza para contener valores no seguros y trabajar con el contenedor, que es seguro. Pasa a ser un patron el utiliza funciones que retornan valores 'seguros':
+La estructura general de un functor se encuentra en [`functor.js`](https://github.com/IIC3585-2016-2/es6-funtional-error-handling-raising-exception/blob/master/src/functor.js). Y se utiliza para contener valores no seguros y trabajar con el contenedor, que es seguro. Pasa a ser un patron el utiliza funciones que retornan valores 'seguros':
 ```javascript
 const findPokemon = nombre => Wrapper.of(find(nombre));
 const level = p => Wrapper.of(p.level);
