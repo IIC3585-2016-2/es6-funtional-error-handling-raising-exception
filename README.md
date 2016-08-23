@@ -126,6 +126,8 @@ Es un poco distinto a `Maybe`, pero permite recuperar información de un posible
 ![](https://i.imgur.com/lzjJPyc.png)
 
 ![](https://i.imgur.com/Fy8HCDB.png)
+
+Como vemos en la figura, un clasico pipeline de programación funcional con sucesivas funciones aplicadas sobre un valor contenido. El primero es el happy-path donde todo funciona correctamente, mientras que el segundo al aparecer un error repentino por un `null`, salta todas las funciones que van despues e incluso al final es capaz de recuperar el error ocasionado.
 ## Relacionados
 
 ### Lift - Contenedores para funciones generales.
@@ -163,7 +165,7 @@ Como vemos se comporta de manera parecida a los Monads anteriores pero con sus p
 
 # Referencias
 Links de fuentes utilizadas investigando del tema y de interes para aventurarse aún más.
-* [Functional Programming in JavaScript - Chapter 5](https://www.manning.com/books/functional-programming-in-javascript)
+* [Functional Programming in JavaScript - Chapter 5 (figuras usadas)](https://www.manning.com/books/functional-programming-in-javascript)
 * [Funtional JavaScript - What is a functor?](https://templecoding.com/blog/2016/06/16/functional-javascript-what-is-a-functor/)
 * [Implementación de Maybe en JavaScript](https://github.com/chrissrogers/maybe)
 * [ES6-Async-Hooli sección Promesas](https://github.com/IIC3585-2016-2/ES6-Async-Hooli/blob/master/async.md)
