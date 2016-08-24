@@ -12,10 +12,10 @@ class Either {
     return new Right(a);
   }
   static fromNullable(val){
-    return val !== null ? right(val) : left(val);
+    return val !== null ? Either.right(val) : Either.left(val);
   }
-  statif of(a){
-    return right(a);
+  static of(a){
+    return Either.right(a);
   }
 }
 
@@ -67,3 +67,41 @@ class Right extends Either {
     return `Either.Right(${this.value})`;
   }
 }
+
+var knex = require('knex')({
+  dialect: 'sqlite3',
+  connection: {
+  filename: './pokemon.db'
+  }
+})
+db = knex('pokemon')
+
+
+const find = id => db.select('*').where({'id':id}).limit(1)
+var pokemon;
+const log = info => console.log(info);
+const capture = function(poke){
+  if (poke){
+      return Either.of(poke)
+  }
+  return Either.left(`Pokemon not found with ID:`)
+}
+const getName = poke => poke.name
+find(100).then(function(row){
+  pokemon = capture(row[0])
+  return pokemon
+})
+.then(function(poke){
+    console.log(poke)
+    return poke.map(getName)
+})
+.then(poke => {log(poke);return poke})
+.then(poke => log(poke.value))
+
+//find(2).then(row => {console.log(row)}).catch(e => console.log(e))
+//var result = db('pokemon').select("*").where({'id':2}).then(x => console.log(x))
+
+
+
+
+knex.destroy()

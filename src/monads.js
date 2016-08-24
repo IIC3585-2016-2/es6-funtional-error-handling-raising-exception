@@ -28,13 +28,10 @@ const sumar = x1 => x2 => x1 + x2;
 const cuadrado = x1 => x1*x1;
 const dividir = x1 => x2 => x2/x1;
 
-/*Aveces uno quiere trabajar con el concepto de lifting (explicar lifting) */
+/*Aveces las funciones que  */
 var dos = wrap(2)
 var dosWrapped = wrap(dos);
 console.log(dosWrapped.toString())
 dosWrapped = wrap(wrap(wrap(dosWrapped)))
 console.log(dosWrapped.toString())
 console.log(dosWrapped.join().toString())
-
-//var valorFinal = cinco.map(cuadrado).map(sumar(10)).map(dividir(4));
-//console.log(valorFinal.join().toString())

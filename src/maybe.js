@@ -1,15 +1,17 @@
 class Maybe{
+  static fromNullable(a){
+    return a !== null && a !== undefined ? Maybe.just(a) : Maybe.nothing()
+  }
+
   static just(a){
     return new Just(a);
   }
   static nothing(){
     return new Nothing();
   }
-  static fromNullable(a){
-    return a !== null ? just(a) : nothing()
-  }
+
   static of(a){
-    return just(a)
+    return Maybe.just(a)
   }
   get isNothing(){
     return false;
@@ -29,7 +31,7 @@ class Just extends Maybe {
     return this._value;
   }
   map(f){
-    return of(f(this._value))
+    return Maybe.of(f(this._value))
   }
   getOrElse(){
     return this._value;
@@ -67,3 +69,37 @@ class Nothing extends Maybe {
     return `Maybe.Nothing`;
   }
 }
+
+var knex = require('knex')({
+  dialect: 'sqlite3',
+  connection: {
+  filename: './pokemon.db'
+  }
+})
+
+db = knex('pokemon')
+
+
+const find = id => db.select('*').where({'id':id}).limit(1)
+var pokemon;
+const log = info => console.log(info);
+const capture = poke => {pokemon = (Maybe.fromNullable(poke))}
+const getName = poke => poke.name
+find(25).then(function(row){
+  capture(row[0])
+  return pokemon
+})
+.then(function(poke){
+    console.log(poke)
+    return poke.map(getName)
+})
+.then(poke => {log(poke);return poke})
+.then(poke => log(poke.value))
+
+//find(2).then(row => {console.log(row)}).catch(e => console.log(e))
+//var result = db('pokemon').select("*").where({'id':2}).then(x => console.log(x))
+
+
+
+
+knex.destroy()
