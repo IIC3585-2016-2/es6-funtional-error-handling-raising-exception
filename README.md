@@ -173,7 +173,7 @@ Links de fuentes utilizadas investigando del tema y de interes para aventurarse 
 * [Promises are the Monads of Asynchronous Programming](https://blog.jcoglan.com/2011/03/11/promises-are-the-monad-of-asynchronous-programming/)
 
 # Dependencias
-Es necesario instalar Node 6.2 y la dependencia knex:
+Es necesario instalar Node 6.2 y la dependencia knex para ejecutar algunos ejemplos:
 ```
 npm install knex --save
 ```
