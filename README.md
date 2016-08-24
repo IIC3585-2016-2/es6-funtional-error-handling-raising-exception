@@ -171,3 +171,9 @@ Links de fuentes utilizadas investigando del tema y de interes para aventurarse 
 * [ES6-Async-Hooli sección Promesas](https://github.com/IIC3585-2016-2/ES6-Async-Hooli/blob/master/async.md)
 * [JavaScript Promises Error and Handling](http://odetocode.com/blogs/scott/archive/2015/10/01/javascript-promises-and-error-handling.aspx)
 * [Promises are the Monads of Asynchronous Programming](https://blog.jcoglan.com/2011/03/11/promises-are-the-monad-of-asynchronous-programming/)
+
+# Dependencias
+Es necesario instalar Node 6.2 y la dependencia knex:
+```
+npm install knex --save
+```
